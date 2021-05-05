@@ -1,4 +1,4 @@
-package com.doudou.springdemo;
+package com.doudou.springdemo.bean;
 
 public class Person {
 
@@ -16,6 +16,14 @@ public class Person {
 
     public String getAge() {
         return age;
+    }
+
+    public Person() {
+    }
+
+    public Person(String name, String age) {
+        this.name = name;
+        this.age = age;
     }
 
     public void setAge(String age) {
