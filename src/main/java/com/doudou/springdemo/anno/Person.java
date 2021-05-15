@@ -1,10 +1,12 @@
-package com.doudou.springdemo.bean;
+package com.doudou.springdemo.anno;
 
 public class Person {
 
     private String name;
 
     private String age;
+
+    private Dog dog;
 
     public String getName() {
         return name;
@@ -21,6 +23,14 @@ public class Person {
     public Person() {
     }
 
+    public Dog getDog() {
+        return dog;
+    }
+
+    public void setDog(Dog dog) {
+        this.dog = dog;
+    }
+
     public Person(String name, String age) {
         this.name = name;
         this.age = age;
@@ -35,6 +45,7 @@ public class Person {
         return "Person{" +
                 "name='" + name + '\'' +
                 ", age='" + age + '\'' +
+                ", dog=" + dog +
                 '}';
     }
 }

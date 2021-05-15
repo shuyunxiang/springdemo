@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd">
+
+    <bean id="person" class="com.doudou.springdemo.xml.bean.Person">
+        <property name="age" value="28"/>
+        <property name="name" value="舒云翔"/>
+    </bean>
+    <bean id="personDAO" class="com.doudou.springdemo.xml.dao.impl.IPersonDAOImpl">
+        <property name="person" ref="person"/>
+    </bean>
+    <bean id="dog" class="com.doudou.springdemo.xml.bean.Dog"/>
+    <bean id="tree" class="com.doudou.springdemo.xml.bean.Tree"/>
+    <context:component-scan base-package="com.doudou.springdemo.xml.bean"/>
+
+    <!-- 开启注解配置 引入配置类 -->
+    <context:annotation-config />
+    <bean class="com.doudou.springdemo.anno.SpringDemoConfiguration"/>
+
+</beans>
